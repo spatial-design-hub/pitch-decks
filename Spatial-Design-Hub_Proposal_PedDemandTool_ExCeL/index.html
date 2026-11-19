@@ -652,13 +652,13 @@ details ul{margin:0;padding:0 22px 20px 42px;display:grid;gap:8px;font-size:14.5
       <h3 class="rv" style="font-size:clamp(24px,3vw,36px);max-width:26ch">Three kinds of account, <span style="color:var(--teal-t)">one standalone tool.</span></h3>
       <div class="access">
         <div class="roles rv" role="group" aria-label="Account type">
-          <button class="role" type="button" data-role="0" aria-pressed="true"><span class="mono">ExCeL viewer</span><h4>Teams who need the answers</h4><p>See the map, day summaries, year calendar, station queues and reports.</p></button>
+          <button class="role" type="button" data-role="0" aria-pressed="true"><span class="mono">ExCeL viewer</span><h4>ExCeL teams and external clients, such as TfL</h4><p>View-only access to the map, day summaries, year calendar, station queues and reports. ExCeL can give viewer accounts to partners such as TfL, who see the results but cannot change events, settings or the venue layout.</p></button>
           <button class="role" type="button" data-role="1" aria-pressed="false"><span class="mono">ExCeL editor</span><h4>Event and crowd planners</h4><p>Enter or import the events for any day, and test changes to the venue layout.</p></button>
           <button class="role" type="button" data-role="2" aria-pressed="false"><span class="mono">Modelling team</span><h4>The people behind the model</h4><p>Everything, plus the behind-the-scenes settings, with a record of every change.</p></button>
         </div>
         <div class="modgrid rv" style="--i:1" id="modgrid" aria-live="polite"></div>
       </div>
-      <p class="small rv" style="margin-top:14px">Illustrative. The exact permissions for each account type are agreed at discovery.</p>
+      <p class="small rv" style="margin-top:14px">Illustrative. Which ExCeL staff and external clients get each account type, and the exact permissions, are agreed at discovery.</p>
     </div>
 
     <div style="margin-top:72px">
@@ -1128,9 +1128,9 @@ scaleMods();window.addEventListener('resize',scaleMods);
 
 /* ---------- account types ---------- */
 var MODS=[
- ['Viewer','Site map and time slider',0],['Viewer','Day summary and year calendar',0],['Viewer','Custom House station queues',0],['Viewer','PDF reports and Excel results',0],
+ ['Viewer','Site map and time slider',0],['Viewer','Day summary and year calendar',0],['Viewer','Custom House station queues',0],['Viewer','PDF reports and Excel results',0],['Viewer','View-only accounts for external clients such as TfL',0],
  ['Editor','Event calendar and Excel import',1],['Editor','Venue layout options',1],
- ['Modelling team','Arrival patterns and visitor origins',2],['Modelling team','Crowding thresholds and route widths',2],['Modelling team','Change history',2],['Modelling team','User accounts',2]];
+ ['Modelling team','Arrival patterns and visitor origins',2],['Modelling team','Crowding thresholds and route widths',2],['Modelling team','Change history',2]];
 var mg=$('#modgrid'),lock='<svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
 MODS.forEach(function(m){var d=document.createElement('div');d.className='mtile';d.innerHTML='<span class="mono">'+m[0]+'</span><b>'+m[1]+'</b>'+lock;mg.appendChild(d)});
 var curRole=-1;
